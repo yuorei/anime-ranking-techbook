@@ -1,0 +1,45 @@
+scalar Upload
+
+type User implements Node {
+  id: ID! @goField(forceResolver: true)
+  name: String!
+  password:String!
+  profieImageURL: String!
+  description: String
+  haveAnime:[AnimeRanking!] @goField(forceResolver: true)
+}
+
+input UserInformationInput {
+  name: String!
+  password: String!
+  description: String
+  profieImage: Upload!
+}
+
+input UpdateAnimeRankingInput {
+  title: String
+  description: String
+  rank: Int
+  animeImage: Upload
+}
+
+input UpdateUserInput {
+  name: String
+  description: String
+  profieImage: Upload
+}
+
+type DeletePayload{
+  success: Boolean!
+}
+
+extend type Query {
+  GetAllUserInformation: [User!]!
+  user(id: ID!): User
+}
+
+type Mutation {
+  registerUser(input: UserInformationInput!): User!
+  updateUser(input:UpdateUserInput!):User!@auth
+  deleteUser: DeletePayload!@auth
+}

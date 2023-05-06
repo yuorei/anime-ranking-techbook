@@ -1,0 +1,19 @@
+directive @auth on FIELD_DEFINITION
+
+type AuthOps {
+  login(input: LoginInput!): LoginResponse! @goField(forceResolver: true)
+}
+
+extend type Mutation {
+  auth: AuthOps! @goField(forceResolver: true)
+}
+
+input LoginInput {
+  name: String!
+  password: String!
+}
+
+type LoginResponse {
+  success: Boolean!
+  token: String
+}

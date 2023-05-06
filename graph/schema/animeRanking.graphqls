@@ -1,0 +1,25 @@
+type AnimeRanking implements Node{
+  id: ID! @goField(forceResolver: true)
+  title: String!
+  description: String
+  animeImageURL: String!
+  rank: Int!
+  user: User!
+}
+
+input NewAnimeRankingInput {
+  title: String!
+  description: String
+  rank: Int!
+  animeImage: Upload!
+}
+
+extend type Query{
+  getAnimeRanking(id:ID!):AnimeRanking!
+}
+
+extend type Mutation {
+  createAnimeRanking(input: NewAnimeRankingInput!): AnimeRanking!@auth
+  updateAnimeRanking(id: ID!, input: UpdateAnimeRankingInput!): AnimeRanking!@auth
+  deleteAnimeRanking(id: ID!): DeletePayload!@auth
+}
