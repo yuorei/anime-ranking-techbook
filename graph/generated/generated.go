@@ -88,12 +88,12 @@ type ComplexityRoot struct {
 	}
 
 	User struct {
-		Description    func(childComplexity int) int
-		HaveAnime      func(childComplexity int) int
-		ID             func(childComplexity int) int
-		Name           func(childComplexity int) int
-		Password       func(childComplexity int) int
-		ProfieImageURL func(childComplexity int) int
+		Description     func(childComplexity int) int
+		HaveAnime       func(childComplexity int) int
+		ID              func(childComplexity int) int
+		Name            func(childComplexity int) int
+		Password        func(childComplexity int) int
+		ProfileImageURL func(childComplexity int) int
 	}
 }
 
@@ -366,12 +366,12 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.User.Password(childComplexity), true
 
-	case "User.profieImageURL":
-		if e.complexity.User.ProfieImageURL == nil {
+	case "User.profileImageURL":
+		if e.complexity.User.ProfileImageURL == nil {
 			break
 		}
 
-		return e.complexity.User.ProfieImageURL(childComplexity), true
+		return e.complexity.User.ProfileImageURL(childComplexity), true
 
 	}
 	return 0, false
@@ -507,7 +507,7 @@ type User implements Node {
   id: ID! @goField(forceResolver: true)
   name: String!
   password:String!
-  profieImageURL: String!
+  profileImageURL: String!
   description: String
   haveAnime:[AnimeRanking!] @goField(forceResolver: true)
 }
@@ -516,7 +516,7 @@ input UserInformationInput {
   name: String!
   password: String!
   description: String
-  profieImage: Upload!
+  profileImage: Upload!
 }
 
 input UpdateAnimeRankingInput {
@@ -529,7 +529,7 @@ input UpdateAnimeRankingInput {
 input UpdateUserInput {
   name: String
   description: String
-  profieImage: Upload
+  profileImage: Upload
 }
 
 type DeletePayload{
@@ -1013,8 +1013,8 @@ func (ec *executionContext) fieldContext_AnimeRanking_user(ctx context.Context, 
 				return ec.fieldContext_User_name(ctx, field)
 			case "password":
 				return ec.fieldContext_User_password(ctx, field)
-			case "profieImageURL":
-				return ec.fieldContext_User_profieImageURL(ctx, field)
+			case "profileImageURL":
+				return ec.fieldContext_User_profileImageURL(ctx, field)
 			case "description":
 				return ec.fieldContext_User_description(ctx, field)
 			case "haveAnime":
@@ -1261,8 +1261,8 @@ func (ec *executionContext) fieldContext_Mutation_registerUser(ctx context.Conte
 				return ec.fieldContext_User_name(ctx, field)
 			case "password":
 				return ec.fieldContext_User_password(ctx, field)
-			case "profieImageURL":
-				return ec.fieldContext_User_profieImageURL(ctx, field)
+			case "profileImageURL":
+				return ec.fieldContext_User_profileImageURL(ctx, field)
 			case "description":
 				return ec.fieldContext_User_description(ctx, field)
 			case "haveAnime":
@@ -1350,8 +1350,8 @@ func (ec *executionContext) fieldContext_Mutation_updateUser(ctx context.Context
 				return ec.fieldContext_User_name(ctx, field)
 			case "password":
 				return ec.fieldContext_User_password(ctx, field)
-			case "profieImageURL":
-				return ec.fieldContext_User_profieImageURL(ctx, field)
+			case "profileImageURL":
+				return ec.fieldContext_User_profileImageURL(ctx, field)
 			case "description":
 				return ec.fieldContext_User_description(ctx, field)
 			case "haveAnime":
@@ -1913,8 +1913,8 @@ func (ec *executionContext) fieldContext_Query_GetAllUserInformation(ctx context
 				return ec.fieldContext_User_name(ctx, field)
 			case "password":
 				return ec.fieldContext_User_password(ctx, field)
-			case "profieImageURL":
-				return ec.fieldContext_User_profieImageURL(ctx, field)
+			case "profileImageURL":
+				return ec.fieldContext_User_profileImageURL(ctx, field)
 			case "description":
 				return ec.fieldContext_User_description(ctx, field)
 			case "haveAnime":
@@ -1971,8 +1971,8 @@ func (ec *executionContext) fieldContext_Query_user(ctx context.Context, field g
 				return ec.fieldContext_User_name(ctx, field)
 			case "password":
 				return ec.fieldContext_User_password(ctx, field)
-			case "profieImageURL":
-				return ec.fieldContext_User_profieImageURL(ctx, field)
+			case "profileImageURL":
+				return ec.fieldContext_User_profileImageURL(ctx, field)
 			case "description":
 				return ec.fieldContext_User_description(ctx, field)
 			case "haveAnime":
@@ -2256,8 +2256,8 @@ func (ec *executionContext) fieldContext_User_password(ctx context.Context, fiel
 	return fc, nil
 }
 
-func (ec *executionContext) _User_profieImageURL(ctx context.Context, field graphql.CollectedField, obj *model.User) (ret graphql.Marshaler) {
-	fc, err := ec.fieldContext_User_profieImageURL(ctx, field)
+func (ec *executionContext) _User_profileImageURL(ctx context.Context, field graphql.CollectedField, obj *model.User) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_User_profileImageURL(ctx, field)
 	if err != nil {
 		return graphql.Null
 	}
@@ -2270,7 +2270,7 @@ func (ec *executionContext) _User_profieImageURL(ctx context.Context, field grap
 	}()
 	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
 		ctx = rctx // use context from middleware stack in children
-		return obj.ProfieImageURL, nil
+		return obj.ProfileImageURL, nil
 	})
 	if err != nil {
 		ec.Error(ctx, err)
@@ -2287,7 +2287,7 @@ func (ec *executionContext) _User_profieImageURL(ctx context.Context, field grap
 	return ec.marshalNString2string(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_User_profieImageURL(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_User_profileImageURL(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "User",
 		Field:      field,
@@ -4316,7 +4316,7 @@ func (ec *executionContext) unmarshalInputUpdateUserInput(ctx context.Context, o
 		asMap[k] = v
 	}
 
-	fieldsInOrder := [...]string{"name", "description", "profieImage"}
+	fieldsInOrder := [...]string{"name", "description", "profileImage"}
 	for _, k := range fieldsInOrder {
 		v, ok := asMap[k]
 		if !ok {
@@ -4339,11 +4339,11 @@ func (ec *executionContext) unmarshalInputUpdateUserInput(ctx context.Context, o
 			if err != nil {
 				return it, err
 			}
-		case "profieImage":
+		case "profileImage":
 			var err error
 
-			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("profieImage"))
-			it.ProfieImage, err = ec.unmarshalOUpload2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚐUpload(ctx, v)
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("profileImage"))
+			it.ProfileImage, err = ec.unmarshalOUpload2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚐUpload(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -4360,7 +4360,7 @@ func (ec *executionContext) unmarshalInputUserInformationInput(ctx context.Conte
 		asMap[k] = v
 	}
 
-	fieldsInOrder := [...]string{"name", "password", "description", "profieImage"}
+	fieldsInOrder := [...]string{"name", "password", "description", "profileImage"}
 	for _, k := range fieldsInOrder {
 		v, ok := asMap[k]
 		if !ok {
@@ -4391,11 +4391,11 @@ func (ec *executionContext) unmarshalInputUserInformationInput(ctx context.Conte
 			if err != nil {
 				return it, err
 			}
-		case "profieImage":
+		case "profileImage":
 			var err error
 
-			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("profieImage"))
-			it.ProfieImage, err = ec.unmarshalNUpload2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚐUpload(ctx, v)
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("profileImage"))
+			it.ProfileImage, err = ec.unmarshalNUpload2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚐUpload(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -4878,9 +4878,9 @@ func (ec *executionContext) _User(ctx context.Context, sel ast.SelectionSet, obj
 			if out.Values[i] == graphql.Null {
 				atomic.AddUint32(&invalids, 1)
 			}
-		case "profieImageURL":
+		case "profileImageURL":
 
-			out.Values[i] = ec._User_profieImageURL(ctx, field, obj)
+			out.Values[i] = ec._User_profileImageURL(ctx, field, obj)
 
 			if out.Values[i] == graphql.Null {
 				atomic.AddUint32(&invalids, 1)
