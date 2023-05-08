@@ -538,7 +538,7 @@ type DeletePayload{
 
 extend type Query {
   GetAllUserInformation: [User!]!
-  user(id: ID!): User
+  user(id: ID!): User!
 }
 
 type Mutation {
@@ -560,7 +560,7 @@ func (ec *executionContext) field_AuthOps_login_args(ctx context.Context, rawArg
 	var arg0 model.LoginInput
 	if tmp, ok := rawArgs["input"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("input"))
-		arg0, err = ec.unmarshalNLoginInput2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐLoginInput(ctx, tmp)
+		arg0, err = ec.unmarshalNLoginInput2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐLoginInput(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -575,7 +575,7 @@ func (ec *executionContext) field_Mutation_createAnimeRanking_args(ctx context.C
 	var arg0 model.NewAnimeRankingInput
 	if tmp, ok := rawArgs["input"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("input"))
-		arg0, err = ec.unmarshalNNewAnimeRankingInput2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐNewAnimeRankingInput(ctx, tmp)
+		arg0, err = ec.unmarshalNNewAnimeRankingInput2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐNewAnimeRankingInput(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -605,7 +605,7 @@ func (ec *executionContext) field_Mutation_registerUser_args(ctx context.Context
 	var arg0 model.UserInformationInput
 	if tmp, ok := rawArgs["input"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("input"))
-		arg0, err = ec.unmarshalNUserInformationInput2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐUserInformationInput(ctx, tmp)
+		arg0, err = ec.unmarshalNUserInformationInput2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐUserInformationInput(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -629,7 +629,7 @@ func (ec *executionContext) field_Mutation_updateAnimeRanking_args(ctx context.C
 	var arg1 model.UpdateAnimeRankingInput
 	if tmp, ok := rawArgs["input"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("input"))
-		arg1, err = ec.unmarshalNUpdateAnimeRankingInput2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐUpdateAnimeRankingInput(ctx, tmp)
+		arg1, err = ec.unmarshalNUpdateAnimeRankingInput2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐUpdateAnimeRankingInput(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -644,7 +644,7 @@ func (ec *executionContext) field_Mutation_updateUser_args(ctx context.Context, 
 	var arg0 model.UpdateUserInput
 	if tmp, ok := rawArgs["input"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("input"))
-		arg0, err = ec.unmarshalNUpdateUserInput2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐUpdateUserInput(ctx, tmp)
+		arg0, err = ec.unmarshalNUpdateUserInput2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐUpdateUserInput(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -996,7 +996,7 @@ func (ec *executionContext) _AnimeRanking_user(ctx context.Context, field graphq
 	}
 	res := resTmp.(*model.User)
 	fc.Result = res
-	return ec.marshalNUser2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐUser(ctx, field.Selections, res)
+	return ec.marshalNUser2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐUser(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_AnimeRanking_user(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1054,7 +1054,7 @@ func (ec *executionContext) _AuthOps_login(ctx context.Context, field graphql.Co
 	}
 	res := resTmp.(*model.LoginResponse)
 	fc.Result = res
-	return ec.marshalNLoginResponse2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐLoginResponse(ctx, field.Selections, res)
+	return ec.marshalNLoginResponse2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐLoginResponse(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_AuthOps_login(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1244,7 +1244,7 @@ func (ec *executionContext) _Mutation_registerUser(ctx context.Context, field gr
 	}
 	res := resTmp.(*model.User)
 	fc.Result = res
-	return ec.marshalNUser2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐUser(ctx, field.Selections, res)
+	return ec.marshalNUser2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐUser(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Mutation_registerUser(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1333,7 +1333,7 @@ func (ec *executionContext) _Mutation_updateUser(ctx context.Context, field grap
 	}
 	res := resTmp.(*model.User)
 	fc.Result = res
-	return ec.marshalNUser2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐUser(ctx, field.Selections, res)
+	return ec.marshalNUser2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐUser(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Mutation_updateUser(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1422,7 +1422,7 @@ func (ec *executionContext) _Mutation_deleteUser(ctx context.Context, field grap
 	}
 	res := resTmp.(*model.DeletePayload)
 	fc.Result = res
-	return ec.marshalNDeletePayload2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐDeletePayload(ctx, field.Selections, res)
+	return ec.marshalNDeletePayload2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐDeletePayload(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Mutation_deleteUser(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1490,7 +1490,7 @@ func (ec *executionContext) _Mutation_createAnimeRanking(ctx context.Context, fi
 	}
 	res := resTmp.(*model.AnimeRanking)
 	fc.Result = res
-	return ec.marshalNAnimeRanking2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐAnimeRanking(ctx, field.Selections, res)
+	return ec.marshalNAnimeRanking2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐAnimeRanking(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Mutation_createAnimeRanking(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1579,7 +1579,7 @@ func (ec *executionContext) _Mutation_updateAnimeRanking(ctx context.Context, fi
 	}
 	res := resTmp.(*model.AnimeRanking)
 	fc.Result = res
-	return ec.marshalNAnimeRanking2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐAnimeRanking(ctx, field.Selections, res)
+	return ec.marshalNAnimeRanking2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐAnimeRanking(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Mutation_updateAnimeRanking(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1668,7 +1668,7 @@ func (ec *executionContext) _Mutation_deleteAnimeRanking(ctx context.Context, fi
 	}
 	res := resTmp.(*model.DeletePayload)
 	fc.Result = res
-	return ec.marshalNDeletePayload2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐDeletePayload(ctx, field.Selections, res)
+	return ec.marshalNDeletePayload2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐDeletePayload(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Mutation_deleteAnimeRanking(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1727,7 +1727,7 @@ func (ec *executionContext) _Mutation_auth(ctx context.Context, field graphql.Co
 	}
 	res := resTmp.(*model.AuthOps)
 	fc.Result = res
-	return ec.marshalNAuthOps2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐAuthOps(ctx, field.Selections, res)
+	return ec.marshalNAuthOps2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐAuthOps(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Mutation_auth(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1772,7 +1772,7 @@ func (ec *executionContext) _Query_node(ctx context.Context, field graphql.Colle
 	}
 	res := resTmp.(model.Node)
 	fc.Result = res
-	return ec.marshalONode2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐNode(ctx, field.Selections, res)
+	return ec.marshalONode2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐNode(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_node(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1827,7 +1827,7 @@ func (ec *executionContext) _Query_getAnimeRanking(ctx context.Context, field gr
 	}
 	res := resTmp.(*model.AnimeRanking)
 	fc.Result = res
-	return ec.marshalNAnimeRanking2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐAnimeRanking(ctx, field.Selections, res)
+	return ec.marshalNAnimeRanking2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐAnimeRanking(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_getAnimeRanking(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1896,7 +1896,7 @@ func (ec *executionContext) _Query_GetAllUserInformation(ctx context.Context, fi
 	}
 	res := resTmp.([]*model.User)
 	fc.Result = res
-	return ec.marshalNUser2ᚕᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐUserᚄ(ctx, field.Selections, res)
+	return ec.marshalNUser2ᚕᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐUserᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_GetAllUserInformation(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1947,11 +1947,14 @@ func (ec *executionContext) _Query_user(ctx context.Context, field graphql.Colle
 		return graphql.Null
 	}
 	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
 		return graphql.Null
 	}
 	res := resTmp.(*model.User)
 	fc.Result = res
-	return ec.marshalOUser2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐUser(ctx, field.Selections, res)
+	return ec.marshalNUser2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐUser(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_user(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -2363,7 +2366,7 @@ func (ec *executionContext) _User_haveAnime(ctx context.Context, field graphql.C
 	}
 	res := resTmp.([]*model.AnimeRanking)
 	fc.Result = res
-	return ec.marshalOAnimeRanking2ᚕᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐAnimeRankingᚄ(ctx, field.Selections, res)
+	return ec.marshalOAnimeRanking2ᚕᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐAnimeRankingᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_User_haveAnime(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -4795,6 +4798,9 @@ func (ec *executionContext) _Query(ctx context.Context, sel ast.SelectionSet) gr
 					}
 				}()
 				res = ec._Query_user(ctx, field)
+				if res == graphql.Null {
+					atomic.AddUint32(&invalids, 1)
+				}
 				return res
 			}
 
@@ -5229,11 +5235,11 @@ func (ec *executionContext) ___Type(ctx context.Context, sel ast.SelectionSet, o
 
 // region    ***************************** type.gotpl *****************************
 
-func (ec *executionContext) marshalNAnimeRanking2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐAnimeRanking(ctx context.Context, sel ast.SelectionSet, v model.AnimeRanking) graphql.Marshaler {
+func (ec *executionContext) marshalNAnimeRanking2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐAnimeRanking(ctx context.Context, sel ast.SelectionSet, v model.AnimeRanking) graphql.Marshaler {
 	return ec._AnimeRanking(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNAnimeRanking2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐAnimeRanking(ctx context.Context, sel ast.SelectionSet, v *model.AnimeRanking) graphql.Marshaler {
+func (ec *executionContext) marshalNAnimeRanking2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐAnimeRanking(ctx context.Context, sel ast.SelectionSet, v *model.AnimeRanking) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -5243,11 +5249,11 @@ func (ec *executionContext) marshalNAnimeRanking2ᚖgithubᚗcomᚋyuoreiᚋbook
 	return ec._AnimeRanking(ctx, sel, v)
 }
 
-func (ec *executionContext) marshalNAuthOps2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐAuthOps(ctx context.Context, sel ast.SelectionSet, v model.AuthOps) graphql.Marshaler {
+func (ec *executionContext) marshalNAuthOps2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐAuthOps(ctx context.Context, sel ast.SelectionSet, v model.AuthOps) graphql.Marshaler {
 	return ec._AuthOps(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNAuthOps2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐAuthOps(ctx context.Context, sel ast.SelectionSet, v *model.AuthOps) graphql.Marshaler {
+func (ec *executionContext) marshalNAuthOps2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐAuthOps(ctx context.Context, sel ast.SelectionSet, v *model.AuthOps) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -5272,11 +5278,11 @@ func (ec *executionContext) marshalNBoolean2bool(ctx context.Context, sel ast.Se
 	return res
 }
 
-func (ec *executionContext) marshalNDeletePayload2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐDeletePayload(ctx context.Context, sel ast.SelectionSet, v model.DeletePayload) graphql.Marshaler {
+func (ec *executionContext) marshalNDeletePayload2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐDeletePayload(ctx context.Context, sel ast.SelectionSet, v model.DeletePayload) graphql.Marshaler {
 	return ec._DeletePayload(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNDeletePayload2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐDeletePayload(ctx context.Context, sel ast.SelectionSet, v *model.DeletePayload) graphql.Marshaler {
+func (ec *executionContext) marshalNDeletePayload2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐDeletePayload(ctx context.Context, sel ast.SelectionSet, v *model.DeletePayload) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -5316,16 +5322,16 @@ func (ec *executionContext) marshalNInt2int(ctx context.Context, sel ast.Selecti
 	return res
 }
 
-func (ec *executionContext) unmarshalNLoginInput2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐLoginInput(ctx context.Context, v interface{}) (model.LoginInput, error) {
+func (ec *executionContext) unmarshalNLoginInput2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐLoginInput(ctx context.Context, v interface{}) (model.LoginInput, error) {
 	res, err := ec.unmarshalInputLoginInput(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNLoginResponse2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐLoginResponse(ctx context.Context, sel ast.SelectionSet, v model.LoginResponse) graphql.Marshaler {
+func (ec *executionContext) marshalNLoginResponse2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐLoginResponse(ctx context.Context, sel ast.SelectionSet, v model.LoginResponse) graphql.Marshaler {
 	return ec._LoginResponse(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNLoginResponse2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐLoginResponse(ctx context.Context, sel ast.SelectionSet, v *model.LoginResponse) graphql.Marshaler {
+func (ec *executionContext) marshalNLoginResponse2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐLoginResponse(ctx context.Context, sel ast.SelectionSet, v *model.LoginResponse) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -5335,7 +5341,7 @@ func (ec *executionContext) marshalNLoginResponse2ᚖgithubᚗcomᚋyuoreiᚋboo
 	return ec._LoginResponse(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalNNewAnimeRankingInput2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐNewAnimeRankingInput(ctx context.Context, v interface{}) (model.NewAnimeRankingInput, error) {
+func (ec *executionContext) unmarshalNNewAnimeRankingInput2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐNewAnimeRankingInput(ctx context.Context, v interface{}) (model.NewAnimeRankingInput, error) {
 	res, err := ec.unmarshalInputNewAnimeRankingInput(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
@@ -5355,12 +5361,12 @@ func (ec *executionContext) marshalNString2string(ctx context.Context, sel ast.S
 	return res
 }
 
-func (ec *executionContext) unmarshalNUpdateAnimeRankingInput2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐUpdateAnimeRankingInput(ctx context.Context, v interface{}) (model.UpdateAnimeRankingInput, error) {
+func (ec *executionContext) unmarshalNUpdateAnimeRankingInput2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐUpdateAnimeRankingInput(ctx context.Context, v interface{}) (model.UpdateAnimeRankingInput, error) {
 	res, err := ec.unmarshalInputUpdateAnimeRankingInput(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) unmarshalNUpdateUserInput2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐUpdateUserInput(ctx context.Context, v interface{}) (model.UpdateUserInput, error) {
+func (ec *executionContext) unmarshalNUpdateUserInput2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐUpdateUserInput(ctx context.Context, v interface{}) (model.UpdateUserInput, error) {
 	res, err := ec.unmarshalInputUpdateUserInput(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
@@ -5380,11 +5386,11 @@ func (ec *executionContext) marshalNUpload2githubᚗcomᚋ99designsᚋgqlgenᚋg
 	return res
 }
 
-func (ec *executionContext) marshalNUser2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v model.User) graphql.Marshaler {
+func (ec *executionContext) marshalNUser2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v model.User) graphql.Marshaler {
 	return ec._User(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNUser2ᚕᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐUserᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.User) graphql.Marshaler {
+func (ec *executionContext) marshalNUser2ᚕᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐUserᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.User) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -5408,7 +5414,7 @@ func (ec *executionContext) marshalNUser2ᚕᚖgithubᚗcomᚋyuoreiᚋbookᚑte
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNUser2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐUser(ctx, sel, v[i])
+			ret[i] = ec.marshalNUser2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐUser(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -5428,7 +5434,7 @@ func (ec *executionContext) marshalNUser2ᚕᚖgithubᚗcomᚋyuoreiᚋbookᚑte
 	return ret
 }
 
-func (ec *executionContext) marshalNUser2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v *model.User) graphql.Marshaler {
+func (ec *executionContext) marshalNUser2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v *model.User) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -5438,7 +5444,7 @@ func (ec *executionContext) marshalNUser2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtest�
 	return ec._User(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalNUserInformationInput2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐUserInformationInput(ctx context.Context, v interface{}) (model.UserInformationInput, error) {
+func (ec *executionContext) unmarshalNUserInformationInput2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐUserInformationInput(ctx context.Context, v interface{}) (model.UserInformationInput, error) {
 	res, err := ec.unmarshalInputUserInformationInput(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
@@ -5696,7 +5702,7 @@ func (ec *executionContext) marshalN__TypeKind2string(ctx context.Context, sel a
 	return res
 }
 
-func (ec *executionContext) marshalOAnimeRanking2ᚕᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐAnimeRankingᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.AnimeRanking) graphql.Marshaler {
+func (ec *executionContext) marshalOAnimeRanking2ᚕᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐAnimeRankingᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.AnimeRanking) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
@@ -5723,7 +5729,7 @@ func (ec *executionContext) marshalOAnimeRanking2ᚕᚖgithubᚗcomᚋyuoreiᚋb
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNAnimeRanking2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐAnimeRanking(ctx, sel, v[i])
+			ret[i] = ec.marshalNAnimeRanking2ᚖgithubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐAnimeRanking(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -5785,7 +5791,7 @@ func (ec *executionContext) marshalOInt2ᚖint(ctx context.Context, sel ast.Sele
 	return res
 }
 
-func (ec *executionContext) marshalONode2githubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐNode(ctx context.Context, sel ast.SelectionSet, v model.Node) graphql.Marshaler {
+func (ec *executionContext) marshalONode2githubᚗcomᚋyuoreiᚋanimeᚑrankingᚑtechbookᚋgraphᚋmodelᚐNode(ctx context.Context, sel ast.SelectionSet, v model.Node) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
@@ -5822,13 +5828,6 @@ func (ec *executionContext) marshalOUpload2ᚖgithubᚗcomᚋ99designsᚋgqlgen�
 	}
 	res := graphql.MarshalUpload(*v)
 	return res
-}
-
-func (ec *executionContext) marshalOUser2ᚖgithubᚗcomᚋyuoreiᚋbookᚑtestᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v *model.User) graphql.Marshaler {
-	if v == nil {
-		return graphql.Null
-	}
-	return ec._User(ctx, sel, v)
 }
 
 func (ec *executionContext) marshalO__EnumValue2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐEnumValueᚄ(ctx context.Context, sel ast.SelectionSet, v []introspection.EnumValue) graphql.Marshaler {

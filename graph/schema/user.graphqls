@@ -35,7 +35,7 @@ type DeletePayload{
 
 extend type Query {
   GetAllUserInformation: [User!]!
-  user(id: ID!): User
+  user(id: ID!): User!
 }
 
 type Mutation {
